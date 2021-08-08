@@ -1,9 +1,10 @@
 # ESM Demo
 
+[esm-demo](https://lceric.github.io/esm-demo/)
+
 ![ESM加载流程图](./docs/ESM加载流程.png)
 
 ## code
-
 **index.html**
 
 ```html
@@ -51,6 +52,7 @@
 </html>
 ```
 
+
 **./mjs/main.js**
 
 ```js
@@ -60,4 +62,4 @@ import config from './config.js'
 // ...
 ```
 
-See more [main.js](./mjs/main.js)
+See more [./mjs/main.js](./mjs/main.js)
