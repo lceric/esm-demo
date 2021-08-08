@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ESM Demo</title>
+</head>
+<body>
+  <script src="./mjs/main.js" type="module"></script>
+
+  <script>
+    console.log('1--内联普通脚本this', this)
+    console.log('1--内联普通脚本初始获取dom', document.querySelector('#app'))
+  </script>
+  <script type="module">
+    console.log('2--内联模块脚本的this', this)
+    console.log('2--内联模块脚本初始获取dom', document.querySelector('#app'))
+  </script>
+  <script type="module" async>
+    console.log('3--内联async模块脚本初始获取dom', document.querySelector('#app'))
+  </script>
+  <script>
+    console.log('4--内联普通脚本初始获取dom', document.querySelector('#app'))
+  </script>
+  
+  <div id="app">
+    <button class="print-config">获取当前config</button>
+  </div>
+
+  <script type="module">
+    console.log('5--内联模块脚本初始获取dom', document.querySelector('#app'))
+  </script>
+  <script type="module" async>
+    console.log('6--内联async模块脚本初始获取dom', document.querySelector('#app'))
+  </script>
+  <script>
+    console.log('7--内联普通脚本初始获取dom', document.querySelector('#app'))
+  </script>
+</body>
+</html>

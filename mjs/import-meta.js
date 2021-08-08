@@ -1,0 +1,1 @@
+console.log('模块的import.meta', import.meta)
