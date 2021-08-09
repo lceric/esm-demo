@@ -1,12 +1,15 @@
-// 多模块共享
+// 模块共享
 import config from './config.js'
 import { sayHi } from './say.js'
+
+console.log('------------multiple-share init------------')
+console.log('multiple-share entry `config` is ', JSON.stringify(config))
 
 const btn = document.querySelector('.print-config')
 
 btn.onclick = () => {
-  console.log('当前config', JSON.stringify(config))
+  console.log('before update `config` is', JSON.stringify(config))
   config.username = 'admin' + Math.random() * 10
-  console.log('config更新成功', JSON.stringify(config))
+  console.log('updated `config` is', JSON.stringify(config))
   sayHi()
 }

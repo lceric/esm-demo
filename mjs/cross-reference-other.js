@@ -1,6 +1,10 @@
-import { play } from './cross-reference.js';
+import { play } from './cross-reference.js'
 
-play()
+try {
+  play()
+} catch (e) {
+  console.error('交叉引用', e)
+}
 
 // 交叉引用
 export const otherPlay = () => {

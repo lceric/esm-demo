@@ -1,29 +1,34 @@
-import * as say from './say.js'
 import config from './config.js'
+import * as say from './say.js'
 
-// 模块import.meta
-import './import-meta.js'
-// 交叉引用
-// import './cross-reference.js';
-// 模块共享
-import './multiple-share.js';
+import './multiple-share.js'
 
 console.log('------------main init------------')
+config.username = 'dd'
+config.age = 10
+console.log('main entry `config` is ', JSON.stringify(config))
 
-console.log('main模块入口config', config, config.username)
+// import './import-meta.js'
+// import './this.js'
 
-console.log('main模块打印say模块', say)
-
-say.sayHi()
+// 交叉引用
+// import './cross-reference.js'
 
 // Always “use strict”
-// a = 6 // main.js:5 Uncaught ReferenceError: a is not defined
+// try {
+//   a = 6 // main.js:5 Uncaught ReferenceError: a is not defined
+// } catch (e) {
+//   console.error('Always `use strict`', e)
+// }
 
 // Module-level scope
 // 模块都有自己的作用域
-// console.log('main模块中直接读取say模块全局变量', varInModule, letInModule, constInModule) // ReferenceError: varInModule is not defined
+// import * as topLevelScope from './top-level-scope.js'
+// console.log('TopLevelScope模块变量', topLevelScope)
+// try {
+//   console.log('TopLevelScope模块全局变量', varInModule) // ReferenceError: varInModule is not defined
+// } catch (e) {
+//   console.error('TopLevelScope模块全局变量', e)
+// }
 
-// contains the information about the current module
-console.log('main模块的import.meta', import.meta)
-// in a module, `this` is undefined
-console.log('main模块的this', this)
+say.sayHi()
